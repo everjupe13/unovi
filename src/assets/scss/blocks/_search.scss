@@ -1,0 +1,329 @@
+.search {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+
+    pointer-events: none;
+
+    &.active {
+
+        background-color: rgba(0, 0, 0, .6);
+
+        .search {
+
+            &__content {
+
+                top: 0;
+
+                height: calc(100vh - 150px);
+        
+                @include small-tablet {
+
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    height: auto;
+        
+                }       
+
+            }
+
+        }
+
+    }
+
+    &__content {
+
+        position: absolute;
+        top: -110vh;
+        left: 0;
+        right: 0;
+        
+        z-index: 20;
+        
+        height: 0;
+        padding-bottom: 280px;
+    
+        background-color: $whiteColor;
+    
+        transition: top .4s ease-in-out, left .4s ease-in-out, bottom .4s ease-in-out, height .4s ease-in-out;
+    
+        overflow: hidden;
+
+        pointer-events: auto;
+
+        @include laptop {
+
+            padding-bottom: 240px;
+    
+        }
+    
+        @include small-tablet {
+    
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: unset;
+            left: -110%;
+            
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            padding-bottom: 270px;
+    
+            overflow-y: auto;
+    
+        }
+
+    }
+
+    &__beacon {
+
+        padding: 0;
+
+        background-color: transparent;
+
+        -webkit-tap-highlight-color: transparent;
+
+    }
+
+    &__img {
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        transform: rotateY(180deg);
+
+    }
+
+    &__control {
+
+        padding: 30px 100px;
+
+        @include tablet {
+
+            padding: 20px 80px;
+
+        }
+
+        @include small-tablet {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px 15px;
+
+        }
+
+    }
+
+    &__close {
+        
+        display: block;
+
+        margin-left: auto;
+
+        background-color: transparent;
+
+    }
+
+    &__mobile {
+
+        &-back {
+
+            display: none;
+
+            @include small-tablet {
+
+                display: block;
+
+            }
+
+        }
+
+    }
+
+    &__body {
+
+        max-width: 920px;
+        margin: 0 auto;
+        margin-top: 10px;
+
+        @include tablet {
+
+            max-width: 570px;
+
+        }
+
+        @include small-tablet {
+
+            max-width: 100%;
+            margin-top: 20px;
+            padding: 0 15px;
+
+        }
+
+    }
+
+    &__label {
+
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        color: $blackColor;
+
+        @include tablet {
+
+            font-size: 16px;
+            line-height: 20px;
+
+        }
+
+        @include small-tablet {
+
+            font-size: 16px;
+
+        }
+
+    }
+
+    &__input {
+
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 15px;
+        border-radius: 5px;
+
+        border: 1px solid $blackColorLight;
+
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        
+        color: $blackColorLight;
+
+        @include tablet {
+
+            margin-top: 5px;
+
+            font-size: 14px;
+
+        }
+
+        @include small-tablet {
+
+            padding: 5px;
+
+        }
+
+        @include placeholder {
+
+            font-size: 16px;
+            
+            color: #9D9D9D;
+
+            @include tablet {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    }
+
+    &__info {
+
+        margin-top: 35px;
+
+    }
+
+    &__text {
+
+        font-weight: 500;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: $blackColor;
+
+        @include tablet {
+
+            font-size: 14px;
+
+        }
+
+        @include small-tablet {
+
+            font-size: 12px;
+
+        }
+
+    }
+
+    &__area {
+
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-top: 20px;
+
+        @include tablet {
+
+            margin-top: 10px;
+
+        }
+
+    }
+
+    &__mark {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-right: 20px;
+        margin-bottom: 15px;
+        padding: 15px 35px;
+        border: 1px solid $secondaryColor2;
+        border-radius: 20px;
+
+        @include tablet {
+
+            padding: 8px 23px;
+
+        }
+
+        &__text {
+
+            font-weight: 500;
+            font-size: 18px;
+            color: $secondaryColor2;
+
+            @include tablet {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    }
+
+    &__img {
+
+        pointer-events: none;
+
+        @include tablet {
+
+            width: 500px;
+
+        }
+
+    }
+
+}

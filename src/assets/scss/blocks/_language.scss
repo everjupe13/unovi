@@ -1,0 +1,294 @@
+.language {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+
+    pointer-events: none;
+
+    &.active {
+
+        background-color: rgba(0, 0, 0, .6);
+
+        .language {
+
+            &__content {
+
+                top: 0;
+
+                height: calc(100vh - 150px);
+        
+                @include small-tablet {
+
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    height: auto;
+        
+                }       
+
+            }
+
+        }
+
+    }
+
+    &__content {
+
+        position: absolute;
+        top: -110vh;
+        left: 0;
+        right: 0;
+        
+        z-index: 20;
+        
+        height: 0;
+        padding-bottom: 280px;
+    
+        background-color: $whiteColor;
+    
+        transition: top .4s ease-in-out, left .4s ease-in-out, bottom .4s ease-in-out, height .4s ease-in-out;
+    
+        overflow: hidden;
+
+        pointer-events: auto;
+
+        @include laptop {
+
+            padding-bottom: 240px;
+    
+        }
+    
+        @include small-tablet {
+    
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: unset;
+            left: -110%;
+            
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            padding-bottom: 270px;
+    
+            overflow-y: auto;
+    
+        }
+
+    }
+
+    &__beacon {
+
+        background-color: transparent;
+
+        -webkit-tap-highlight-color: transparent;
+
+        &__text {
+
+            font-size: 16px;
+            font-weight: 500;
+            color: $whiteColor;
+            line-height: 20px;
+
+            @include laptop {
+
+                font-size: 14px;
+
+            }
+
+            @include tablet {
+
+                font-size: 12px;
+                line-height: 1;
+
+            }
+
+        }
+
+    }
+
+    &__img {
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        transform: rotateY(180deg);
+
+    }
+
+    &__control {
+
+        padding: 30px 100px;
+
+        @include tablet {
+
+            padding: 20px 80px;
+
+        }
+
+        @include small-tablet {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px 15px;
+
+        }
+
+    }
+
+    &__close {
+        
+        display: block;
+
+        margin-left: auto;
+
+        background-color: transparent;
+
+    }
+
+    &__mobile {
+
+        &-back {
+
+            display: none;
+
+            @include small-tablet {
+
+                display: block;
+
+            }
+
+        }
+
+    }
+
+    &__body {
+        
+        display: grid;
+        grid-template-columns: repeat(3, 140px);
+        column-gap : 60px;
+
+        width: max-content;
+        margin: 0 auto;
+        margin-top: 10px;
+
+        @include tablet {
+
+            column-gap: 30px;
+
+        }
+
+        @include small-tablet {
+
+            grid-template-columns: repeat(2, 135px);
+
+            margin-top: 20px;
+            padding: 0 15px;
+
+        }
+        
+    }
+
+    &__column {
+
+        &:nth-child(3) {
+
+            @include small-tablet {
+
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+
+                display: grid;
+                grid-template-columns: repeat(2, 135px);
+                column-gap: 30px;
+
+            }
+
+        }
+
+    }
+
+    &__item {
+
+        margin-bottom: 25px;
+
+        @include tablet {
+
+            margin-bottom: 30px;
+
+        }
+
+        @include small-tablet {
+
+            padding-left: 15px;
+
+        }
+
+    }
+
+    &__link {
+
+        padding: 5px;
+
+        font-weight: 500;
+        font-size: 22px;
+        color: $blackColorLight;
+
+        @include tablet {
+
+            font-size: 16px;
+
+        }
+
+        &:hover {
+
+            padding-bottom: 4px;
+
+            color: $hoverColor;
+
+            .language__text {
+
+                border-bottom: 1px solid $hoverColor;
+
+            }
+
+        }
+
+    }
+
+    &__text {
+
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+
+    }
+
+    &__img {
+
+        pointer-events: none;
+
+        @include tablet {
+
+            width: 500px;
+
+        }
+
+        @include small-tablet {
+
+            width: 100%;
+
+        }
+
+    }
+
+}

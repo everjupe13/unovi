@@ -1,0 +1,172 @@
+.btn {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $whiteColor;
+    border-radius: 5px;
+    
+    background-color: transparent;
+
+    -webkit-tap-highlight-color: transparent;
+
+    &_small {
+
+        min-width: 130px;
+        padding: 8px 25px;
+
+        @include laptop {
+
+            min-width: 100px;
+            padding: 8px 20px;
+
+        }
+
+        @include tablet {
+
+            height: 25px;
+            padding: 8px 20px;
+    
+        }
+
+        @include phone {
+
+            height: 30px;
+            min-width: 80px;
+
+        }
+
+    }
+
+    &_large {
+
+        padding: 14px 57px;
+
+        @include phone {
+
+            height: 40px;
+            margin: 0 auto;
+            padding: 10px 55px;
+
+        }
+
+    }
+
+    &_transparent {
+
+        transition: border .2s, background-color .2s, box-shadow .2s;
+
+        &:hover {
+
+            border: 1px solid #FF004D;
+
+            background: #FF004D;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+
+        }
+
+        &:active {
+
+            border: 1px solid #FF004D;
+
+            background-color: #FF004D;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+
+        }
+
+    }
+
+    &_filled {
+
+        border: 1px solid $secondaryColor2;
+        background-color: $secondaryColor2;
+
+        transition: border .2s, background-color .2s, box-shadow .2s;
+
+        
+        &:hover {
+
+            border: 1px solid #FF004D;
+
+            background: #FF004D;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+
+        }
+
+        &:active {
+
+            border: 1px solid #FF004D;
+
+            background-color: #FF004D;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+
+        }
+
+    }
+
+    &_outlined {
+
+        border: 1px solid $secondaryColor2;
+
+        &:hover {
+
+            .btn__text {
+
+                color: $whiteColor;
+
+            }
+
+        }
+
+        &:active {
+
+            .btn__text {
+
+                color: $whiteColor;
+
+            }
+
+        }
+
+        .btn__text {
+
+            color: $secondaryColor2;
+
+            transition: color .2s;
+
+        }
+
+    }
+
+    &__text {
+
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        color: $whiteColor;
+        line-height: 1;
+
+        white-space: nowrap;
+
+        @include laptop {
+
+            font-size: 14px;
+
+        }
+
+        @include tablet {
+
+            font-size: 10px;
+
+        }
+
+        @include phone {
+
+            font-size: 12px;
+
+        }
+
+    }
+
+}

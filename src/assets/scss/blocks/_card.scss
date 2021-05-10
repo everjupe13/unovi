@@ -1,0 +1,82 @@
+.card {
+
+    max-width: 210px;
+    padding: 30px 20px 20px;
+    border-radius: 15px;
+
+    background: $whiteColor;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+
+    @include tablet {
+
+        padding: 15px 10px 25px 10px;
+            
+    }
+
+    &__title {
+
+        margin-top: 20px;
+
+        font-size: 24px;
+        font-weight: 600;
+        color: $hoverColor;
+        line-height: 29px;
+
+        @include tablet {
+
+            margin-top: 13px;
+
+            font-size: 14px;
+            line-height: 1;
+            
+        }
+
+        @include small-tablet {
+
+            margin-top: 10px;
+
+            font-size: 12px;
+            
+        }
+
+    }
+
+    &__text {
+
+        margin-top: 15px;
+
+        font-size: 12px;
+        font-weight: normal;
+        color: $blackColor;
+        line-height: 130%;
+
+        @include laptop {
+
+            margin-top: 10px;
+
+            font-size: 10px;
+
+        }
+
+        @include tablet {
+
+            margin-top: 7px;
+
+            font-size: 8px;
+            
+        }
+
+
+    }
+
+    &__icon {
+
+        @include tablet {
+
+            width: 30px;   
+            
+        }
+
+    }
+
+}

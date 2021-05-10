@@ -1,0 +1,302 @@
+.about {
+
+    padding: 117px 0 180px;
+
+    @include tablet {
+
+        padding: 40px 0 70px;
+
+    }
+
+    @include small-tablet {
+
+        padding: 20px 0 70px;       
+
+    }
+
+    @include phone {
+
+        padding: 235px 0 135px;
+
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+
+        margin-left: 470px;
+
+        background-color: $whiteColor;
+
+        @include laptop {
+
+            margin-left: 430px;
+
+        }
+
+        @include tablet {
+
+            margin-left: 300px;
+            
+        }
+
+        @include small-tablet {
+
+            margin-left: 240px;
+
+        }
+
+        @include phone {
+
+            padding: 15px 0;
+            margin-left: 0;
+
+        }
+
+        &:after {
+
+            content: '';
+
+            position: absolute;
+            top: 0;
+            left: 100%;
+            bottom: 100px;
+            z-index: -1;
+
+            width: 485px;
+
+            background-color: $whiteColor;
+
+            transform: translateX(-10px);
+
+            @include laptop {
+
+                bottom: 44px;
+
+            }
+
+            @include small-tablet {
+
+                bottom: 25px;   
+                
+            }
+
+            @include phone {
+
+                top: 0;
+                bottom: 0;
+                left: 50%;
+
+                width: 600px;
+                
+                transform: translateX(-50%);
+
+            }
+
+        }
+
+    }
+
+    &__list {
+
+        margin-top: 25px;
+
+    }
+
+    &__img {
+
+        position: absolute;
+        top: 102px;
+        left: -140px;
+
+        pointer-events: none;
+
+        @include laptop {
+
+            top: 132px;
+            left: -73px;
+            
+            width: 400px;
+
+        }
+
+        @include tablet {
+
+            top: -19px;
+            left: -105px;
+            
+            width: 310px;
+
+        }
+
+        @include small-tablet {
+
+            top: 41px;
+            left: -50px;
+            
+            width: 250px;
+
+        }
+
+        @include phone {
+
+            top: -235px;
+            left: 10px;
+
+            width: 199px;
+
+        }
+
+    }
+
+    &__cloud {
+
+        &1 {
+
+            position: absolute;
+            top: -187px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+
+            @include tablet {
+
+                top: -155px;
+                
+                width: 1079px;
+
+            }
+
+            @include small-tablet {
+
+                top: -117px;
+
+                width: 900px;
+
+            }
+
+            @include phone {
+
+                top: -210px;
+
+                transform: translateX(calc(-50% - 98px))
+
+            }
+
+        }
+
+        &2 {
+
+            display: block;
+
+            position: absolute;
+            top: 95px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(calc(-50% - 116px));
+
+            pointer-events: none;
+
+            @include laptop {
+
+                top: 95px;
+
+                transform: translateX(calc(-50% - 54px));
+
+            }
+
+            @include tablet {
+
+                top: 13px;
+                
+                width: 139px;
+
+                transform: translateX(calc(-50% - 81px));
+
+            }
+
+            @include small-tablet {
+
+                top: 13px;
+                
+                width: 110px;
+
+                transform: translateX(calc(-50% - 43px));
+
+            }
+
+            @include phone {
+
+                display: none;
+
+            }
+
+            &_m {
+
+                display: none;
+
+                @include phone {
+
+                    display: block;
+
+                    position: absolute;
+                    top: -60px;
+                    left: 50%;
+                    z-index: 5;
+
+                    transform: translateX(calc(-50% - 20px));
+
+                }
+
+            }
+
+        }
+
+        &3 {
+
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(calc(-50%));
+
+            pointer-events: none;
+
+            @include laptop {
+
+                bottom: -127px;
+
+            }
+
+            @include tablet {
+
+                bottom: -79px;
+                
+                width: 1400px;
+
+            }
+
+            @include small-tablet {
+
+                bottom: -73px;
+                
+                width: 1000px;
+
+            }
+
+            @include phone {
+
+                display: none;
+
+            }
+
+        }
+
+    }
+
+}

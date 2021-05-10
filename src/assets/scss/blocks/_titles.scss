@@ -1,0 +1,108 @@
+.title {
+
+    font-size: 42px;
+    font-weight: 600;
+    color: $blackColor;
+    line-height: 51px;
+
+    @include laptop {
+
+        font-size: 33px;
+        line-height: 40px;
+
+    }
+
+    @include tablet {
+
+        font-size: 21px;
+        line-height: 26px;        
+
+    }
+
+    @include small-tablet {
+
+        font-size: 19px;
+        line-height: 23px;
+
+    }
+
+    @include phone {
+
+        font-size: 21px;
+        line-height: 26px;
+
+    }
+
+    &_center {
+
+        text-align: center;
+
+        &_m {
+
+            @include phone {
+
+                text-align: center;
+
+            }
+
+        }
+
+    }
+
+    &_white {
+
+        color: $whiteColor;
+
+    }
+
+}
+
+.subtitle {
+
+    margin: 25px 0 30px;
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: $blackColor;
+
+    @include laptop {
+
+        margin: 15px 0 20px;
+
+        font-size: 16px;
+        line-height: 20px;
+
+    }
+
+    @include tablet {
+
+        margin: 5px 0 15px;
+
+        font-size: 12px;
+        line-height: 15px;
+        
+    }
+
+    @include small-tablet {
+
+        font-size: 11px;
+
+    }
+
+    @include phone {
+
+        margin: 10px 0 20px;
+
+        font-size: 12px;
+        line-height: 15px;
+
+    }
+
+    &_white {
+
+        color: $whiteColor;
+
+    }
+
+}

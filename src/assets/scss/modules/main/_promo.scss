@@ -1,0 +1,380 @@
+.promo {
+
+    padding: 90px 0 50px;
+
+    @include tablet {
+
+        padding: 55px 0 50px;
+
+    }
+
+    @include small-tablet {
+
+        padding: 55px 0 30px;
+
+    }
+
+    @include phone {
+
+        padding: 45px 0 450px;
+
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 2;
+
+        width: 800px;
+
+        @include tablet {
+
+            width: auto;
+
+        }
+
+    }
+
+    &__title {
+
+        margin-bottom: 7px;
+
+        font-size: 52px;
+        font-weight: 500;
+        color: $whiteColor;
+        line-height: 63px;
+
+        @include laptop {
+
+            font-size: 42px;
+
+        }
+
+        @include tablet {
+
+            font-size: 30px;
+            line-height: 37px;
+
+        }
+
+        @include small-tablet {
+
+            font-size: 24px;
+            line-height: 30px;
+
+        }
+
+        @include phone {
+
+            font-size: 28px;
+            line-height: 34px;
+
+        }
+
+        & .accent {
+
+            font-weight: 700;
+            color: $primaryColor2;
+
+        }
+
+        & .usual {
+
+            font-weight: 600;
+
+        }
+
+        & .divider {
+
+            @include phone {
+
+                display: none;
+
+            }
+
+        }
+
+        span {
+
+            @include phone {
+
+                display: block;
+
+            }
+
+        }
+
+    }
+
+    &__text {
+
+        margin-bottom: 30px;
+        margin-right: 180px;
+
+        font-size: 22px;
+        font-weight: 500;
+        color: $whiteColor;
+        line-height: 1.3;
+
+        @include laptop {
+
+            font-size: 17px;
+
+        }
+
+        @include tablet {
+
+            margin-bottom: 20px;
+            margin-right: 350px;
+            
+            font-size: 12px;
+
+        }
+
+        @include small-tablet {
+
+            margin-bottom: 10px;
+            margin-right: 220px;
+
+            font-size: 11px;
+
+        }
+
+        @include phone {
+
+            margin-right: 0;
+            
+            font-size: 12px;
+
+        }
+
+        &_small {
+
+            margin-right: 220px;
+
+            @include tablet {
+
+                margin-right: 380px;
+
+            }
+
+            @include small-tablet {
+
+                margin-right: 240px;
+
+            }
+
+            @include phone {
+
+                margin-right: 0;
+
+            }
+
+        }
+
+        &_offset {
+
+            margin-bottom: 40px;
+
+            @include tablet {
+
+                margin-bottom: 20px;
+
+            }
+
+            @include phone {
+
+                margin-bottom: 25px;
+
+            }
+
+        }
+
+    }
+
+    &__scroll {
+
+        position: relative;
+        z-index: 2;
+
+        width: max-content;
+        margin: 0 auto;
+        margin-top: 155px;
+
+        @include tablet {
+
+            margin-top: 65px;
+            margin-bottom: 25px;
+
+        }
+
+        @include small-tablet {
+
+            margin-top: 45px;
+            margin-bottom: 15px;
+
+        }
+
+    }
+
+    &__bg {
+
+        position: absolute;
+        left: 70px;
+        top: -70px;
+        z-index: 1;
+
+        pointer-events: none;
+
+        #spaceship1 {
+
+            // animation: name duration timing-function delay iteration-count direction fill-mode;
+            animation: rotateShips 14s ease-in-out .3s infinite;
+            transform-origin: 751px;
+
+        }
+
+        #spaceship2 {
+
+            animation: rotateShips 14s ease-in-out .2s infinite;
+            transform-origin: 751px;
+
+        }
+
+        #label {
+
+            animation: labelVisibility 14s ease-in-out .2s infinite;
+            transform-origin: center;
+            transform-box: fill-box;
+
+            transform: scale(0);
+
+        }
+
+        #spaceship3 {
+
+            animation: rotateShips 14s ease-in-out .25s infinite;
+            transform-origin: 751px;
+
+        }
+
+        #spaceship4 {
+
+            animation: staticShip 4s ease .1s infinite;
+
+        }
+
+        @include laptop {
+
+            left: 61px;
+            top: -73px;
+
+            width: 1000px;
+            height: auto;
+
+        }
+
+        @include tablet {
+
+            top: -75px;
+            left: 38px;
+
+            width: 664px;
+
+        }
+
+        @include small-tablet {
+
+            top: -54px;
+            left: 26px;
+
+            width: 540px;
+
+        }
+
+        @include phone {
+
+            top: 100%;
+            left: 50%;
+
+            width: 700px;
+
+            transform: translate(calc(-50% - 130px), -55px);
+
+        }
+
+    }
+
+}
+
+@keyframes rotateShips {
+
+    0% {
+        transform: rotateZ(0deg) scale(1) translateY(0px);
+    }
+    50% {
+        transform: rotateZ(1080deg) scale(.98) translateY(0px);
+    }
+    60% {
+        transform: rotateZ(1080deg) translateY(-5px);
+    }
+    70% {
+        transform: rotateZ(1080deg) translateY(0px);
+    }
+    80% {
+        transform: rotateZ(1080deg) scale(1) translateY(-5px);
+    }
+    90% {
+        transform: rotateZ(1080deg) translateY(0px);
+    }
+    100% {
+        transform: rotateZ(1080deg) translateY(0px);
+    }
+
+}
+
+@keyframes labelVisibility {
+
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0);
+    }
+    60% {
+        transform: scale(1) translateY(-5px);
+    }
+    70% {
+        transform: scale(1) translateY(0px);
+    }
+    80% {
+        transform: scale(1) translateY(-5px);
+    }
+    90% {
+        transform: scale(1) translateY(0px);
+    }
+    100% {
+        transform: scale(0) translateY(0px);
+    }
+
+}
+
+@keyframes staticShip {
+
+    0% {
+        transform: rotateZ(0deg);
+    }
+    10% {
+        transform: rotateZ(1deg);
+    }
+    30% {
+        transform: rotateZ(-1deg);
+    }
+    50% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+
+}

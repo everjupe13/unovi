@@ -1,0 +1,285 @@
+.card-list {
+
+    display: flex;
+    justify-content: space-between;
+
+    @include small-tablet {
+
+        flex-wrap: wrap;
+        justify-content: space-between;
+                    
+    }
+
+    &__wrapper {
+        
+        width: 215px;
+
+        @include laptop {
+
+            width: 175px;
+
+        }
+
+        @include tablet {
+
+            width: 135px;
+
+        }
+
+        @include small-tablet {
+
+            width: 170px;
+            margin-bottom: 15px;
+
+        }
+
+        @include phone {
+
+            width: calc(100% / 3 - 15px)
+
+        }
+
+        &:nth-child(4), &:nth-child(5) {
+
+            @include small-tablet {
+
+                flex-grow: 2;
+
+            }
+
+        }
+
+    }
+
+    &__item {
+
+        width: 100%;
+        max-width: 215px;
+        height: 100%;
+        margin: 0 auto;
+        border-radius: 15px;
+    
+        background-color: $whiteColor;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+    
+        overflow: hidden;
+
+        @include tablet {
+
+            border-radius: 5px;
+        
+        }
+
+        @include small-tablet {
+
+            max-width: 170px;
+
+        }
+
+        @include phone {
+
+            max-width: 110px;
+
+        }
+
+        &:nth-child(2) {
+
+            .card-list {
+
+                &__header {
+
+                    background-color: #379FCD;
+
+                }
+
+            }
+
+        }
+
+        &:nth-child(3) {
+
+            .card-list {
+
+                &__header {
+
+                    background-color: #39B0E4;
+
+                }
+
+                &__body {
+
+                    &__item {
+
+                        @include tablet {
+
+                            padding: 5px 5px;
+
+                        }
+
+                        @include phone {
+
+                            padding: 5px 10px;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &:nth-child(4) {
+
+            .card-list {
+
+                &__header {
+
+                    background-color: #55C4F4;
+
+                }
+
+            }   
+
+        }
+
+        &:nth-child(5) {
+
+            .card-list {
+
+                &__header {
+
+                    background-color: #18D4D7;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__header {
+
+        padding: 20px 15px;
+        
+        background-color: $hoverColor;
+
+        white-space: nowrap;
+
+        @include laptop {
+
+            padding: 15px 10px;
+
+        }
+
+        @include tablet {
+
+            padding: 10px 15px 10px 10px;
+        
+        }
+
+        @include phone {
+
+            padding: 10px 8px;
+
+        }
+
+    }
+
+    &__title {
+
+        font-size: 17px;
+        font-weight: bold;
+        color: $whiteColor;
+        line-height: 21px;
+
+        @include laptop {
+
+            font-size: 13px;
+
+        }
+
+        @include tablet {
+
+            font-size: 10px;
+            line-height: 12px;
+        
+        }
+
+        @include phone {
+
+            font-size: 9px;
+
+        }
+
+    }
+
+    &__body {
+
+        padding: 10px 0 30px;
+
+        @include laptop {
+
+            font-size: 10px;
+
+        }
+
+        @include tablet {
+
+            padding: 6px 0 20px;
+        
+        }
+
+        @include phone {
+
+            padding: 5px 0 15px; 
+
+        }
+
+        &__item {
+
+            padding: 10px 15px;
+
+            @include tablet {
+
+                padding: 5px 10px;
+        
+            }
+
+            &:nth-child(2n) {
+
+                background-color: $mutedColor;
+
+            }
+
+        }
+
+        &__text {
+
+            display: block;
+
+            font-size: 12px;
+            font-weight: 500;
+            color: $blackColor;
+
+            white-space: nowrap;
+
+            @include tablet {
+
+                font-size: 8px;
+        
+            }
+
+            @include phone {
+
+                font-size: 6px;
+
+            }
+
+        }
+
+    }
+
+}

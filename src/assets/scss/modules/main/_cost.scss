@@ -1,0 +1,232 @@
+.cost {
+
+    padding: 100px 0 130px;
+
+    @include tablet {
+
+        padding: 100px 0 85px;
+
+    }
+
+    @include small-tablet {
+
+        padding: 30px 0 75px;
+
+    }
+
+    @include phone {
+
+        padding: 80px 0 50px;
+
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+
+    }
+
+    &__body {
+
+        padding: 60px 30px 45px;
+        border-radius: 15px;
+    
+        background-color: $whiteColor;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+
+        @include tablet {
+
+            padding: 40px 30px 30px;
+
+        }
+
+        @include small-tablet {
+
+            padding: 25px 20px 25px;
+
+        }
+
+        @include phone {
+
+            padding: 30px 20px 50px;
+
+        }
+
+    }
+
+    &__form {
+
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        column-gap: 80px;
+
+        @include laptop {
+
+            grid-template-columns: 1fr 340px;
+            column-gap: 30px;
+
+        }
+
+        @include tablet {
+
+            grid-template-columns: 1fr 250px;
+            column-gap: 20px;
+            
+        }
+
+        @include small-tablet {
+
+            grid-template-columns: 1fr 200px;
+            column-gap: 15px;
+            
+        }
+
+        @include phone {
+
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+
+            gap: 30px 0px;
+
+        }
+
+    }
+
+    &__desc {
+
+        margin-top: 55px;
+
+        counter-reset: cost-counter;
+
+        @include laptop {
+
+            margin-top: 40px;
+
+        }
+
+        @include laptop {
+
+            margin-top: 25px;
+
+        }
+
+        @include phone {
+
+            margin-top: 45px;
+
+        }
+
+        &__item {
+
+            margin-top: 15px;
+
+            font-weight: 500;
+            font-size: 15px;
+            color: $blackColor;
+            line-height: 18px;
+
+            counter-increment: cost-counter;
+
+            @include laptop {
+
+                font-size: 13px;
+
+            }
+
+            @include tablet {
+
+                margin-top: 10px;
+
+                font-size: 10px;
+                line-height: 12px;
+
+            }
+
+            @include phone {
+
+                margin-top: 25px;
+
+            }
+
+            &:first-child {
+
+                margin-top: 0;
+
+            }
+
+            &:before {
+
+                content: counter(cost-counter) ') ';
+
+                font-weight: 500;
+                font-size: 15px;
+                color: $blackColor;
+                line-height: 18px;
+
+                @include laptop {
+
+                    font-size: 13px;
+
+                }
+
+                @include tablet {
+
+                    font-size: 10px;
+                    line-height: 12px;
+            
+                }
+
+            }
+
+        }
+
+    }
+
+    &__outer {
+
+        position: relative;
+
+    }
+
+    &__cloud {
+
+        &1 {
+
+            position: absolute;
+            top: -485px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+
+            @include tablet {
+
+                top: -360px;
+
+                width: 1400px;
+
+            }
+
+            @include small-tablet {
+
+                top: -270px;
+
+                width: 1000px;
+
+            }
+
+            @include phone {
+
+                top: -205px;
+                width: 900px;
+
+            }
+
+        }
+
+    }
+    
+}

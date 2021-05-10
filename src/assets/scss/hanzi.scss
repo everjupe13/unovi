@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+// 2. Design Tokens - define variables for typography, color, spacing, media-queries 
+@import
+
+    "utils/2-design-tokens/media-queries",
+    "utils/2-design-tokens/spacing";
+
+
+.promo {
+
+    &__content {
+
+        min-height: 352px;
+
+        @include laptop {
+
+            min-height: 282px;
+
+        }
+
+        @include tablet {
+
+            min-height: 202px;
+
+        }
+
+        @include small-tablet {
+
+            min-height: 180px;
+
+        }
+
+    }
+
+}
+
+.about {
+
+    &__content {
+
+        min-height: 614px;
+
+        @include laptop {
+
+            min-height: 550px;
+
+        }
+
+        @include tablet {
+
+            min-height: 300px;
+
+        }
+
+        @include small-tablet {
+
+            min-height: 307px
+
+        }
+
+    }
+
+    &__img {
+
+        top: 80px;
+
+        @include tablet {
+
+            top: -19px;
+
+        }
+
+        @include small-tablet {
+
+            top: 41px;
+
+        }
+
+        @include phone {
+
+            top: -235px;
+
+        }
+
+    }
+
+}
+
+.features {
+
+    &__content {
+
+        min-height: 338px;
+
+        @include small-tablet {
+
+            min-height: 220px;
+
+        }
+
+    }
+
+}
+
+.propose {
+
+    &__content {
+
+        @include laptop {
+
+            min-height: 618px;
+
+        }
+
+        @include tablet {
+
+            min-height: 400px;
+
+        }
+
+    }
+
+}
+
+.capability {
+
+    &__content {
+
+        min-height: 546px;
+
+        @include tablet {
+
+            min-height: 266px;
+
+        }
+
+    }
+
+}
+
+.soon {
+
+    &__content {
+
+        @include laptop {
+
+            min-height: 538px;
+
+        }
+
+        @include tablet {
+
+            min-height: 280px;
+
+        }
+
+    }
+
+}
+
+.learn {
+
+    &__content {
+
+        min-height: 538px;
+
+        @include tablet {
+
+            min-height: 357px;
+
+        }
+
+        @include small-tablet {
+
+            min-height: 341px;
+
+        }
+
+    }
+
+}

@@ -1,0 +1,26 @@
+.experience {
+
+    padding: 30px 0 100px;
+
+    background-color: $whiteColor;
+
+    @include tablet {
+
+        padding: 10px 0 50px;
+        
+    }
+
+    @include small-tablet {
+
+        padding: 10px 0 30px;
+        
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+
+    }
+
+}

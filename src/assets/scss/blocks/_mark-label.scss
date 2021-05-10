@@ -1,0 +1,63 @@
+.mark-label {
+
+    width: max-content;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    
+    background-color: #EAEAEA;
+
+    white-space: nowrap;
+
+    @include laptop {
+
+        margin-right: 14px;
+
+    }
+
+    @include tablet {
+
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 10px;        
+        
+    }
+
+    @include small-tablet {
+
+        margin-right: 5px;
+        margin-bottom: 8px;
+            
+    }
+
+    &__grid {
+
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    &__text {
+
+        font-size: 18px;
+        font-weight: 500;
+        color: $blackColor;
+        line-height: 22px;
+
+        @include laptop {
+
+            font-size: 14px;
+
+        }
+
+        @include tablet {
+
+            font-size: 10px;
+            line-height: 12px;
+        
+        }
+
+    }
+
+}

@@ -1,0 +1,136 @@
+.checkbox-field {
+
+    display: flex;
+    align-items: center;
+
+    &__label {
+
+        display: flex;
+        align-items: center;
+
+        padding: 5px 0;
+
+        user-select: none;
+        cursor: pointer;
+
+        &__checkbox {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border: 1px solid #3B3B3B;
+            border-radius: 5px;
+
+            background-color: $whiteColor;
+
+            transition: background-color .2s ease-in-out;
+
+            @include laptop {
+
+                width: 20px;
+                height: 20px;
+
+            }
+            
+            @include tablet {
+
+                width: 18px;
+                height: 18px;
+
+            }
+
+            @include phone {
+
+                margin-right: 5px;
+
+            }
+
+            &__icon {
+
+                display: block;
+
+                width: 16px;
+                height: 16px;
+
+                transition: opacity .2s ease-in-out;
+
+                opacity: 0;
+
+                @include laptop {
+
+                    width: 12px;
+                    height: 12px;
+
+                }
+
+                @include tablet {
+
+                    width: 10px;
+                    height: 10px;
+
+                }
+
+            }
+
+        }
+
+        &__text {
+
+            display: block;
+
+            font-size: 18px;
+            font-weight: normal;
+            color: $blackColor;
+            line-height: 1.3;
+
+            @include laptop {
+
+                font-size: 16px;
+
+            }
+
+            @include tablet {
+
+                font-size: 12px;
+
+            }
+
+        }
+
+    }
+
+    &__input {
+
+        display: none;
+
+        &:checked {
+
+            & + .checkbox-field {
+
+                &__label {
+
+                    .checkbox-field__label__checkbox {
+
+                        background-color: $hoverColor;
+
+                        &__icon {
+
+                            opacity: 1;
+    
+                        }    
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

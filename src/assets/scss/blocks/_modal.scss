@@ -1,0 +1,181 @@
+.modal {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: none;
+
+    min-width: 635px;
+    max-width: $desktopContainer;
+    padding: 50px 95px 90px; 
+    border-radius: 15px;
+
+    background-color: $whiteColor;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+
+    @include laptop {
+
+        min-width: 530px;
+        max-width: $laptopContainer;
+        padding: 30px 40px 50px;
+
+    }
+
+    @include tablet {
+
+        min-width: 330px;
+        max-width: $tabletContainer;
+        padding: 25px 30px 50px;
+
+    }
+
+    @include phone {
+
+        padding: 25px 30px 45px;   
+
+    }
+
+    &__close {
+
+        position: absolute;
+        top: 25px;
+        left: 0;
+
+        width: 100%;
+        padding: 0 25px;
+
+        @include tablet {
+
+            top: 10px;
+
+            padding: 0 10px;
+
+        }
+
+        &__btn {
+
+            display: block;
+
+            margin-left: auto;
+
+            background-color: transparent;
+
+        }
+
+    }
+
+    &__title {
+
+        font-weight: 600;
+        font-size: 32px;        
+        text-align: center;
+        color: $blackColor;
+        line-height: 1.3;
+
+        @include laptop {
+
+            font-size: 24px;
+
+        }
+
+        @include tablet {
+
+            font-size: 18px;
+
+        }
+
+    }
+
+    &__body {
+
+        margin-top: 50px;
+
+        @include laptop {
+
+            margin-top: 35px;
+
+        }
+
+        @include tablet {
+
+            margin-top: 20px;
+
+        }
+
+    }
+
+    &__form {
+
+        .input-field {
+
+            @include small-tablet {
+
+                margin-top: 10px;
+
+            }
+
+            &__label {
+
+                @include small-tablet {
+
+                    font-size: 10px;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__checkbox-field {
+
+        margin-top: 40px;
+
+        @include laptop {
+
+            margin-top: 35px;
+
+        }
+
+        @include tablet {
+
+            margin-top: 20px;
+
+        }
+
+    }
+
+    &__btn {
+
+        margin-top: 50px;
+        padding: 13px 120px;
+
+        @include laptop {
+
+            margin-top: 35px;
+            padding: 11px 90px;
+
+        }
+
+        @include tablet {
+
+            margin-top: 20px;
+            padding: 9px 65px;
+
+        }
+
+        @include phone {
+
+            margin: 0 auto;
+            margin-top: 20px;
+
+        }
+
+    }
+
+}

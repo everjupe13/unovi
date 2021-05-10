@@ -1,0 +1,183 @@
+.capability {
+
+    padding: 75px 0 45px;
+    
+    @include tablet {
+
+        padding: 60px 0 45px;
+        
+    }
+
+    @include phone {
+
+        display: none;
+
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+
+        margin-right: 400px;
+        
+        background-color: $whiteColor;
+
+        @include tablet {
+
+            margin-right: 290px;
+            
+        }
+
+        @include small-tablet {
+
+            margin-right: 220px;
+            
+        }
+
+        &::after {
+
+            content: '';
+
+            position: absolute;
+            top: 0;
+            right: 99%;
+            bottom: 0;
+            z-index: -1;
+
+            width: 500px;
+
+            background-color: $whiteColor;
+
+        }
+
+    }
+
+    &__img {
+
+        position: absolute;
+        top: 35px;
+        right: -118px;
+        z-index: 1;
+
+        pointer-events: none;
+
+        @include laptop {
+
+            right: -151px;
+
+            width: 380px;
+
+        }
+
+        @include tablet {
+
+            width: 278px;
+            
+        }
+
+        @include small-tablet {
+
+            top: 30px;
+            right: -118px;
+
+            width: 240px;
+            
+        }
+
+    }
+
+    &__cloud {
+
+        &1 {
+
+            position: absolute;
+            bottom: -600px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(calc(-50%));
+
+            pointer-events: none;
+            
+            @include tablet {
+
+                bottom: -409px;
+                
+                width: 1300px;
+                
+            }
+            
+            @include small-tablet {
+
+                bottom: -284px;
+                
+                width: 1000px;
+                
+            }
+
+        }
+
+        &2 {
+
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(calc(-50% + 190px));
+
+            pointer-events: none;
+
+            @include tablet {
+
+                top: 20px;
+                transform: translateX(calc(-50% + 170px));
+
+                width: 270px;
+                
+            }
+
+            @include small-tablet {
+
+                top: 27px;
+                transform: translateX(calc(-50% + 122px));
+
+                width: 240px;
+                
+            }
+
+        }
+
+        &3 {
+
+            position: absolute;
+            top: -715px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(calc(-50%));
+
+            pointer-events: none;
+
+            @include tablet {
+
+                top: -515px;
+
+                width: 1600px;
+                
+            }
+
+            @include small-tablet {
+
+                top: -320px;
+
+                width: 1000px;
+                
+            }
+
+        }
+
+    }
+
+}

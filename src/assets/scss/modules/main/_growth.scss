@@ -1,0 +1,273 @@
+.growth {
+
+    padding-top: 80px;
+
+    background-color: $whiteColor;
+
+    @include tablet {
+
+        padding: 80px 0 10px;
+        
+    }
+
+    @include small-tablet {
+
+        padding: 50px 0 10px;
+        
+    }
+
+    @include phone {
+
+        padding: 30px 0 10px;
+
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+
+        background-color: $whiteColor;
+
+    }
+
+    &__subtitle {
+
+        margin-right: 193px;
+
+        @include tablet {
+
+            margin-right: 120px;
+        
+        }
+
+    }
+
+    &__grid {
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 205px;
+
+        @include tablet {
+
+            grid-auto-rows: 125px;
+        
+        }
+
+        @include phone {
+
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+    }
+
+    &__item {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 15px;
+        border: 1px solid $primaryColor1;
+
+        @include phone {
+
+            border: 1px solid $primaryColor1;
+
+        }
+
+        @include tablet {
+
+            padding: 10px;
+        
+        }
+
+        &:nth-child(4n + 1) {
+
+            border-left: none;
+
+        }
+
+        &:nth-child(4n) {
+
+            border-right: none;
+
+        }
+
+        &:nth-child(-n + 4) {
+
+            border-top: none;
+
+        }
+
+        &:nth-child(n + 5):nth-child(-n + 8) {
+
+            border-bottom: none;
+
+        }
+
+        &:nth-child(2n + 1) {
+
+            @include phone {
+
+                border-left: none;
+
+            }
+
+        }
+
+        &:nth-child(2n) {
+
+            @include phone {
+
+                border-right: none;
+
+            }
+
+        }
+
+        &:nth-child(1), &:nth-child(2) {
+
+            @include phone {
+
+                border-top: none;
+
+            }
+
+        }
+
+        &:nth-child(3n), &:nth-child(4n) {
+
+            @include phone {
+
+                border-top: 1px solid $primaryColor1;
+
+            }
+
+        }
+
+        &:nth-child(5), &:nth-child(6) {
+
+            @include phone {
+
+                border-bottom: 1px solid $primaryColor1;
+                
+            }
+
+        }
+
+
+        &__title {
+
+            font-size: 42px;
+            font-weight: 600;
+            text-align: center;
+            color: $hoverColor;
+
+            @include tablet {
+
+                font-size: 26px;
+        
+            }
+
+            @include small-tablet {
+
+                font-size: 18px;
+        
+            }
+
+            @include phone {
+
+                font-size: 26px;
+
+            }
+
+        }
+
+        &__text {
+
+            min-height: 50px;
+            margin-top: 15px;
+
+            font-weight: normal;
+            font-size: 20px;
+            text-align: center;
+            color: $ebonyColor;
+            line-height: 24px;
+
+            @include tablet {
+
+                min-height: 40px;
+                margin-top: 10px;
+                
+                font-size: 12px;
+                line-height: 15px;
+        
+            }
+
+            @include small-tablet {
+
+                margin-top: 6px;
+                font-size: 10px;
+                line-height: 13px;
+        
+            }
+
+            @include phone {
+
+                min-height: 30px;
+                margin-top: 10px;
+
+                font-size: 12px;
+
+            }
+
+        }
+
+    }
+
+    &__cloud {
+
+        &1 {
+
+            position: absolute;
+            top: -560px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+
+            @include tablet {
+
+                top: -394px;
+
+                width: 1400px;
+                
+            }
+
+            @include small-tablet {
+
+                top: -288px;
+
+                width: 1000px;
+                
+            }
+
+            @include phone {
+
+                top: -228px;
+                
+                width: 800px;
+
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,995 @@
+.sidebar {
+
+    --hidden-position: -100%;
+    --hidden-position-sub: -100%;
+    --visible-position-sub: -1000px;
+
+    @include small-tablet {
+
+        position: fixed;
+        top: 0;
+        left: -110%;
+        bottom: 0;
+        z-index: 12;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100vw;
+        padding: 0 15px 20px;
+
+        background-color: $whiteColor;
+
+        transition: left .4s ease-in-out;
+
+        overflow-y: auto;
+
+    }
+
+    &__showcase {
+
+        position: relative;
+        z-index: 17;
+
+        display: flex;
+
+        @include tablet {
+
+            position: absolute;
+            top: 15px;
+            left: -100%;
+
+        }
+
+        @include small-tablet {
+
+            position: static;
+            left: 15px;
+
+            display: block;
+
+            margin-top: 30px;
+
+        }
+
+        &::before {
+
+            content: '';
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -30px;
+            bottom: calc(100% + 30px);
+
+            background-color: $whiteColor;
+
+            @include tablet {
+
+                left: calc((-100vw + #{$tabletContainer}) / 2);
+                right: 10px;
+
+            }
+
+        }
+
+        &__item {
+
+            margin: 0 10px;
+
+            user-select: none;
+
+            @include laptop {
+
+                margin: 0 8px;
+
+            }
+
+            @include tablet {
+
+                display: none;
+    
+            }
+
+            @include small-tablet {
+
+                position: relative;
+
+                display: block;
+
+                margin: 0;
+                margin-bottom: 20px;
+
+            }
+            
+            &:first-child {
+
+                margin-left: -10px;
+
+                @include laptop {
+
+                    margin-left: -8px;
+
+                }
+
+                @include small-tablet {
+
+                    margin: 0;
+                    margin-bottom: 20px;
+
+                }
+
+            }
+
+            &:last-child {
+
+                margin-right: 0;
+
+            }
+
+        }
+
+        &__wrapper {
+
+            position: relative;
+
+            display: block;
+
+            padding: 10px;
+
+            @include laptop {
+
+                padding: 6px;
+
+            }
+
+            @include small-tablet {
+
+                padding: 5px 0;
+
+            }
+
+        }
+
+        &__link {
+
+            .sidebar__showcase__text {
+
+                &:hover {
+
+                    color: #0E7BAB;
+                    
+                    transition: color .1s;
+            
+                }
+            
+                &:focus {
+            
+                    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.25));
+            
+                }
+
+            }
+
+        }
+
+        &__text {
+
+            font-size: 16px;
+            font-weight: 500;
+            color: $whiteColor;
+            line-height: 20px;
+
+            transition: color .1s .25s;
+
+            @include laptop {
+
+                font-size: 14px;
+
+            }
+
+            @include tablet {
+
+                font-size: 13px;
+
+            }
+
+            @include small-tablet {
+
+                font-size: 24px;
+                color: $blackColorLight;
+
+            }
+
+        }
+
+        &__icon {
+
+            position: absolute;
+            top: 50%;
+            right: 0;
+
+            color: $whiteColor;
+
+            transform: translateY(-50%);
+            transition: color .1s .25s;
+
+            @include laptop {
+
+                right: -3px;
+
+            }
+
+            @include small-tablet {
+
+                display: none;
+
+            }
+
+        }
+
+    }
+
+    &__dropdown {
+
+        position: absolute;
+        top: 0;
+        left: var(--hidden-position);
+        z-index: 15;
+
+        // containerWidth/2 - HalfLogoWidth + offsetRight + distanceToLeftBorder
+        min-width: calc((#{$desktopContainer} / 2) + ((100vw - #{$desktopContainer}) / 2) - 70px - 30px);
+        height: 100vh;
+        padding-top: 70px;
+        padding-left: calc((100vw - #{$desktopContainer}) / 2 + 20px);
+
+        background-color: $whiteColor;
+
+        transition: left .4s ease-in-out;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        @include laptop {
+
+            min-width: calc((#{$laptopContainer} / 2) + ((100vw - #{$laptopContainer}) / 2) - 70px - 50px);
+            max-width: calc((#{$laptopContainer} / 2) + ((100vw - #{$laptopContainer}) / 2));
+            padding-left: calc((100vw - #{$laptopContainer}) / 2 + 20px);
+
+        }
+
+        @include tablet {
+
+            min-width: 420px;
+            padding-left: 90px;
+
+        }
+
+        @include small-tablet {
+
+            top: 0;
+            bottom: 0;
+            left: -100%;
+            z-index: 18;
+
+            display: flex;
+            flex-direction: column;
+
+            width: 100vw;
+            min-width: 100vw;
+            max-width: 100vw;
+            padding: 0 15px 40px;
+
+        }
+
+        &__body {
+
+            z-index: 16;
+
+        }
+
+    }
+
+    &__body {
+
+        position: relative;
+
+        width: 510px;
+        height: max-content;
+        min-height: calc(100vh - 56px - 70px);
+        margin-top: 56px;
+        padding-bottom: 260px;
+
+        @include laptop {
+
+            width: calc((#{$laptopContainer} / 2) + ((100vw - #{$laptopContainer}) / 2) - (100vw - #{$laptopContainer}) / 2 - 20px);
+
+        }
+
+        @include tablet {
+
+            width: 100%;
+            margin-top: 20px;
+
+        }
+
+        @include small-tablet {
+
+            min-height: unset;
+            margin-top: 30px;
+            padding-bottom: 20px;
+
+        }
+        
+    }
+
+    &__list {
+
+        display: none;
+
+        padding: 0 50px 0 25px;
+
+        @include tablet {
+
+            padding: 0 25px 0 0;
+
+        }
+
+        @include small-tablet {
+
+            padding: 0;
+
+        }
+
+    }
+
+    &__divider {
+
+        margin: 25px 0;
+
+        height: 1px;
+        width: 100%;
+
+        background-color: #777777;
+
+    }
+
+    &__item {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 25px;
+        padding: 0 10px;
+
+        user-select: none;
+
+        @include small-tablet {
+
+            padding: 0;
+
+        }
+
+        &:hover {
+
+            .sidebar__item {
+
+                &__text {
+
+                    color: $hoverColor;
+
+                }
+
+                &__icon {
+
+                    color: $hoverColor;
+
+                }
+
+            }
+
+        }
+
+        &.active {
+
+            .sidebar__item {
+
+                &__text {
+
+                    color: $hoverColor;
+
+                }
+
+                &__icon {
+
+                    color: $hoverColor;
+
+                }
+
+            }
+
+        }
+
+        &__text {
+
+            font-size: 24px;
+            font-weight: 500;
+            color: $blackColorLight;
+
+            @include laptop {
+
+                font-size: 18px;
+
+            }
+
+        }
+
+        &__label {
+
+            position: relative;
+
+            font-size: 18px;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #777777;
+            line-height: 22px;
+
+            &::after {
+
+                content: '—';
+
+                position: absolute;
+                right: -32px;
+
+                font-size: 18px;
+                font-weight: 300;
+                color: #777777;
+                line-height: 22px;
+
+            }
+
+        }
+
+        &__link {
+
+            display: block;
+
+            width: 100%;
+            
+            cursor: pointer;
+
+        }
+
+        &__icon {
+
+            color: $blackColorLight;
+
+        }
+
+    }
+
+    &__pic {
+
+        position: absolute;
+        bottom: 0;
+        left: calc(((-100vw + #{$desktopContainer}) / 2) - 20px);
+
+        pointer-events: none;
+
+        @include laptop {
+
+            left: calc(((-100vw + #{$laptopContainer}) / 2) - 20px);
+
+        }
+
+        @include tablet {
+
+            width: 500px;
+            left: calc(((-100vw + #{$tabletContainer}) / 2) - 20px);
+
+        }
+
+        @include small-tablet {
+
+            display: none;
+
+        }
+
+    }
+
+    &[data-state=visible] {
+
+        .sidebar {
+
+            &__collapse {
+
+                @include tablet {
+
+                    display: none;
+
+                }
+
+            }
+
+            &__showcase {
+
+                position: relative;
+
+                background-color: $whiteColor;
+
+                transition: background-color .2s .4s;
+
+                @include tablet {
+
+                    position: absolute;
+
+                    left: 60px;
+
+                    transition: left .4s ease-in-out;
+
+                }
+
+                @include small-tablet {
+
+                    position: static;
+
+                }
+
+                &::before {
+
+                    bottom: -30px;
+
+                    transition: bottom .1s .4s;
+
+                    @include tablet {
+
+                        bottom: -15px;
+
+                    }
+
+                    @include small-tablet {
+
+                        content: none;
+
+                    }
+
+                }
+
+                &__item {
+
+                    @include tablet {
+
+                        display: block;
+
+                    }
+
+                    &.active {
+
+                        .sidebar {
+        
+                            &__showcase {
+        
+                                &__text, &__icon {
+        
+                                    color: $hoverColor;
+                                    transition: color .1s;
+
+                                    @include small-tablet {
+
+                                        color: $blackColor;
+
+                                    }
+        
+                                }
+        
+                            }
+        
+                        }
+        
+                    }
+
+                }
+
+                &__text {
+
+                    color: $blackColor;
+
+                }
+
+                &__icon {
+
+                    color: $blackColor;
+
+                }
+
+            }
+
+            &__dropdown {
+
+                left: 0;
+
+                @include small-tablet {
+
+                    left: -100%;
+
+                }
+
+            }
+
+            &__subdropdown[data-state-sub=visible] {
+
+                left: var(--visible-position-sub);
+
+            }
+
+            &__overlay {
+
+                display: block;
+
+                @include small-tablet {
+
+                    display: none;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__subdropdown {
+
+        position: absolute;
+        top: 0;
+        left: var(--hidden-position-sub);
+        z-index: 14;
+
+        min-width: 450px;
+        max-width: calc(50vw - (#{$desktopContainer} / 2) - 40px);
+        height: 100vh;
+        padding-top: 70px;
+        padding-left: 75px;
+
+        background-color: #F6F6F4;
+
+        transition: left .4s ease-in-out;
+
+        overflow-y: auto;
+
+        @include laptop {
+
+            min-width: 400px;
+            max-width: calc(50vw - (#{$laptopContainer} / 2) - 40px);
+
+        }
+
+        @include tablet {
+
+            min-width: 380px;
+            max-width: calc(50vw - (#{$tabletContainer} / 2) - 40px);
+            padding-left: 50px;
+
+        }
+
+        @include small-tablet {
+
+            top: 0;
+            bottom: 0;
+            left: -100%;
+            z-index: 19;
+            
+            display: flex;
+            flex-direction: column;
+
+            width: 100vw;
+            min-width: 100vw;
+            max-width: 100vw;
+            padding: 0 15px 40px;
+
+            background-color: $whiteColor;
+
+        }
+
+        &__body {
+
+            margin-top: 56px;
+
+            @include tablet {
+
+                margin-top: 20px;
+
+            }
+            
+        }
+
+        &__list {
+
+            display: none;
+
+        }
+
+        &__sublist {
+
+            display: none;
+
+        }
+
+        &__item {
+
+            margin-bottom: 25px;
+
+            @include laptop {
+
+                margin-bottom: 15px;
+
+            }
+
+        }
+
+        &__link {
+
+            padding: 3px 0;
+
+            font-size: 18px;
+            font-weight: 500;
+            color: $blackColorLight;
+            line-height: 1.3;
+
+            @include laptop {
+
+                font-size: 12px;
+                
+            }
+
+            @include small-tablet {
+
+                font-size: 18px;
+
+            }
+
+            &:hover {
+
+                color: $hoverColor;
+
+                border-bottom: 1px solid;
+
+            }
+
+        }
+
+    }
+
+    &__overlay {
+
+        display: none;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 13;
+
+        background-color: rgba(0, 0, 0, .4);
+
+        @include small-tablet {
+
+            display: none;
+
+        }
+
+    }
+
+    &.mobile-active {
+
+        @include small-tablet {
+
+            left: 0;
+
+        }
+
+        .sidebar {
+
+            &__dropdown {
+
+                &[data-mobile-state=visible] {
+
+                    @include small-tablet {
+            
+                        left: 0;
+            
+                    }
+            
+                }
+
+            }
+
+            &__subdropdown {
+
+                &[data-mobile-sub-state=visible] {
+
+                    @include small-tablet {
+
+                        left: 0;
+
+                    }
+
+                }
+
+                &[data-mobile-sub-state=hidden] {
+
+                    left: -100%;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__collapse {
+
+        display: none;
+
+        @include tablet {
+
+            display: inline;
+
+            background-color: transparent;
+
+        }
+
+    }
+
+    &__mobile-control {
+
+        display: none;
+
+        @include small-tablet {
+    
+            display: flex;
+            justify-content: space-between;
+
+            padding: 20px 0 0;
+
+        }  
+
+        &_close {
+
+            -webkit-tap-highlight-color: transparent;
+
+            @include small-tablet {
+
+                display: block;
+
+                background-color: transparent;
+
+            }
+
+        }
+
+        &_language {
+
+            @include small-tablet {
+                
+                margin-left: auto;
+
+                margin-right: 50px;
+
+            }
+
+            span {
+
+                @include small-tablet {
+
+                    font-size: 20px;
+                    color: $blackColor;
+    
+                }
+
+            }
+
+        }
+
+        &_search {
+
+            @include small-tablet {
+
+                color: $blackColor;
+
+            }
+
+        }
+
+        &_back {
+
+            -webkit-tap-highlight-color: transparent;
+
+            @include small-tablet {
+
+                background-color: transparent;
+
+                svg {
+
+                    color: $hoverColor;
+
+                }
+
+                span {
+
+                    margin-left: 16px;
+                    color: $hoverColor;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__mobile-footer {
+
+        display: none;
+
+        @include small-tablet {
+
+            display: block;
+            
+            margin-top: auto;
+
+        }
+
+        &_img {
+
+            @include small-tablet {
+
+                display: block;
+                
+                margin-left: -15px;
+
+            }
+
+        }
+
+        &_area {
+
+            @include small-tablet {
+
+                display: flex;
+                justify-content: center;
+                
+                margin-top: 30px;
+
+            }
+
+        }
+
+    }
+
+    &__btn {
+
+        @include small-tablet {
+
+            
+
+            width: 160px;
+            height: auto;
+            margin: 0 12px;
+
+            font-size: 14px;
+
+            .btn__text {
+
+                font-size: inherit;
+
+            }
+
+        }
+
+    }
+
+}

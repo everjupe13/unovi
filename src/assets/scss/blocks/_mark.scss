@@ -1,0 +1,112 @@
+.mark {
+
+    width: 200px;
+
+    @include phone {
+
+        width: calc(100% / 3 - 10px);
+        margin-bottom: 20px;
+
+    }
+
+    &:nth-child(4), &:nth-child(5) {
+
+        @include phone {
+
+            flex-grow: 2;
+
+        }
+
+    }
+
+    &__label {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 105px;
+        height: 105px;
+        margin: 0 auto;
+        border-radius: 100%;
+        
+        background: linear-gradient(91.33deg, #00FFDF -35.52%, #00C3D4 42.95%);
+
+        @include tablet {
+
+            width: 70px;
+            height: 70px;   
+            
+        }
+
+        @include small-tablet {
+
+            width: 60px;
+            height: 60px;   
+            
+        }
+
+        @include phone {
+
+            width: 70px;
+            height: 70px;
+
+        }
+
+    }
+
+    &__title {
+
+        margin-top: 20px;
+
+        font-size: 24px;
+        font-weight: 600;
+        color: $whiteColor;
+        line-height: 29px;
+        text-align: center;
+
+        @include laptop {
+
+            font-size: 20px;
+            line-height: 25px;
+
+        }
+
+        @include tablet {
+
+            margin-top: 10px;
+            
+            font-size: 14px;
+            line-height: 17px;
+            
+        }
+
+        @include small-tablet {
+
+            margin-top: 10px;
+            
+            font-size: 13px;
+            line-height: 17px;
+            
+        }
+
+        span.row {
+
+            display: block;
+
+        }
+
+    }
+
+    &__icon {
+
+        @include tablet {
+
+            width: 35px;
+            height: 35px;   
+            
+        }
+
+    }
+
+}

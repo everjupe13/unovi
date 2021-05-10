@@ -1,0 +1,51 @@
+.scroll-invite {
+
+    display: block;
+    
+    max-width: 350px;
+
+    @include phone {
+
+        display: none;
+
+    }
+
+    &__title {
+
+        font-size: 16px;
+        font-weight: 600;
+        color: $whiteColor;
+
+        @include tablet {
+
+            font-size: 10px;
+
+        }
+
+    }
+
+    &__icon {
+
+        width: max-content;
+        margin: 0 auto;
+        margin-top: 10px;
+        
+        @include small-tablet {
+
+            margin-top: 5px;   
+
+        }
+
+        & > svg, img {
+
+            @include small-tablet {
+
+                width: 20px;
+
+            }
+            
+        }
+
+    }
+
+}

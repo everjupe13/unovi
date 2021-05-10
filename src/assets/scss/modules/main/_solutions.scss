@@ -1,0 +1,45 @@
+.solutions {
+
+    padding: 140px 0 140px;
+
+    @include tablet {
+
+        padding: 66px 0 100px;
+                
+    }
+
+    @include tablet {
+
+        padding: 66px 0 75px;
+                
+    }
+
+    @include phone {
+
+        padding: 60px 0;
+
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+
+    }
+
+    &__bg {
+
+        position: absolute;
+        top: -54px;
+        right: -81px;
+        z-index: 1;
+
+        @include phone {
+
+            width: 600px;
+
+        }
+
+    }
+
+}

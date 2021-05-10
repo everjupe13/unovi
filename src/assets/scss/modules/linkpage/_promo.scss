@@ -1,0 +1,147 @@
+.promo {
+
+    padding-top: 90px;
+    height: 100%;
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+        
+        padding-left: calc(#{$desktopContainer} / 2);
+
+        @include laptop {
+
+            padding-left: calc(#{$laptopContainer} / 2);
+
+        }
+
+        @include tablet {
+
+            padding-left: 0;
+
+        }
+        
+    }
+
+    &__title {
+
+        font-style: normal;
+        font-weight: 600;
+        font-size: 56px;
+        color: #FFFFFF;
+        line-height: 68px;
+
+        @include laptop {
+
+            font-size: 50px;
+            line-height: 60px;
+
+        }
+
+        @include tablet {
+
+            font-size: 40px;
+            line-height: 50px;
+
+        }
+
+        @include phone {
+
+            font-size: 35px;
+            line-height: 45px;
+
+        }
+
+        span {
+
+            display: block;
+
+        }
+
+    }
+
+    &__img {
+
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: 5;
+
+        width: 1920px;
+
+        transform: translateX(-50%);
+
+        user-select: none;
+        pointer-events: none;
+
+        @media screen and (max-height: 1100px) {
+
+            max-height: calc(100% - 100px);
+
+        }
+
+        @include laptop {
+
+            width: 1800px;
+
+            // @media screen and (max-height: )
+
+        }
+
+        @include tablet {
+
+            width: 100vw;
+
+            transform: translateX(-50%) rotateY(180deg);
+
+        }
+
+    }
+
+    &__btn {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-width: 280px;
+        width: max-content;
+        margin-top: 40px;
+        padding: 11px 60px;
+
+        @include tablet {
+
+            min-width: 160px;
+
+        }
+
+        @include phone {
+
+            margin-top: 20px;
+
+        }
+
+        .btn__text {
+
+            margin-right: 10px;
+            
+            font-size: 24px;
+
+            @include tablet {
+
+                font-size: 20px;
+
+            }
+
+        }
+
+        .btn__icon {
+
+            display: block;
+
+        }
+
+    }
+
+}

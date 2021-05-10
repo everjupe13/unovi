@@ -1,0 +1,78 @@
+.faq {
+
+    padding: 195px 0 240px;
+
+    @include tablet {
+
+        padding: 120px 0 100px;
+                
+    }
+
+    @include small-tablet {
+
+        padding: 100px 0 100px;
+                
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 2;
+
+    }
+
+    &__body {
+
+        margin-top: 35px;
+        
+        @include tablet {
+
+            margin-top: 10px;
+        
+        }
+
+    }
+
+    &__bg {
+
+        position: absolute;
+        top: -66px;
+        left: 66px;
+        z-index: 1;
+
+    }
+
+    &__cloud {
+
+        &1 {
+
+            position: absolute;
+            top: -325px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+
+            @include tablet {
+
+                top: -225px;
+
+                width: 1400px;
+                
+            }
+
+            @include small-tablet {
+
+                top: -160px;
+
+                width: 1000px;
+                
+            }
+
+        }
+
+    }
+
+}

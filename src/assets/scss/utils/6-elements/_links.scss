@@ -1,0 +1,17 @@
+a:not(.custom-link) {
+
+    &:hover {
+
+        color: #0E7BAB;
+
+        transition: color .1s;
+
+    }
+
+    &:focus {
+
+        filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.25));
+
+    }
+
+}

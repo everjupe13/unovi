@@ -1,0 +1,73 @@
+.spending {
+
+    padding: 100px 0 125px;
+
+    @include tablet {
+
+        padding: 67px 0 125px;
+
+    }
+    
+    @include small-tablet {
+
+        padding: 67px 0 55px;
+
+    }
+
+    @include phone {
+
+        padding: 60px 0;
+
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+
+        margin-top: 25px;
+
+    }
+
+    &__grid {
+
+        display: flex;
+        justify-content: space-between;
+
+        @include phone {
+
+            flex-wrap: wrap;
+
+        }
+
+    }
+
+    &__bg {
+
+        position: absolute;
+        left: -137px;
+        top: -70px;
+        z-index: 1;
+
+        pointer-events: none;
+
+    }
+
+    &__cloud {
+
+        &1 {
+
+            position: absolute;
+            top: -212px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(calc(-50% + 26px));
+
+            pointer-events: none;
+
+        }
+
+    }
+
+}

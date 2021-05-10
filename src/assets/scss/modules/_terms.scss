@@ -1,0 +1,112 @@
+.terms {
+
+    padding: 25px 0;
+
+    @include laptop {
+
+        padding: 20px 0;           
+
+    }
+
+    @include tablet {
+
+        padding: 15px 0;
+
+    }
+
+    @include phone {
+
+        padding: 15px 0 25px;
+
+    }
+    
+    &__content {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include phone {
+
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+    }
+
+    &__text {
+        
+        margin-right: 40px;
+
+        font-size: 12px;
+        font-weight: 500;
+        color: $whiteColor;
+        line-height: 15px;
+
+        @include laptop {
+
+            font-size: 9px;
+            line-height: 11px;
+
+        }
+
+        @include tablet {
+
+            font-size: 6px;
+            line-height: 7px;
+
+        }
+
+        @include small-tablet {
+
+            margin-right: 15px;
+
+            font-size: 6px;
+            line-height: 7px;
+
+        }
+
+        @include phone {
+
+            margin-right: 0;
+            margin-bottom: 20px;
+
+            font-size: 10px;
+            line-height: 12px;
+
+        }
+
+    }
+
+    &__link {
+
+        display: block;
+
+        width: max-content;
+        
+        font-size: 12px;
+        font-weight: 500;
+        color: #42FFFF;
+
+        @include tablet {
+
+            font-size: 10px;
+
+        }
+
+        @include tablet {
+
+            font-size: 9px;
+
+        }
+
+        @include phone {
+
+            font-size: 14px;
+
+        }
+
+    }
+
+}

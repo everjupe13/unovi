@@ -1,0 +1,262 @@
+.learn {
+
+    padding: 100px 0 100px;
+
+    @include tablet {
+
+        padding: 50px 0;
+
+    }
+
+    @include phone {
+
+        padding: 320px 0 50px; 
+
+    }
+
+    &__content {
+
+        position: relative;
+        z-index: 10;
+
+        margin-right: 230px;
+
+        @include tablet {
+
+            margin-right: 240px;
+
+        }
+
+        @include small-tablet {
+
+            margin-right: 145px;
+
+        }
+
+        @include phone {
+
+            margin-right: 0;
+            padding: 15px 0;
+
+        }
+
+        &::after {
+
+            content: '';
+
+            position: absolute;
+            top: 0;
+            right: 99%;
+            bottom: 0;
+            z-index: -1;
+
+            width: 500px;
+
+            background-color: $whiteColor;
+
+            @include phone {
+
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                right: unset;
+
+                width: 600px;
+                
+                transform: translateX(-50%);
+
+            }
+
+        }
+
+    }
+
+    &__body {
+
+        margin-right: 150px;
+
+        @include laptop {
+
+            margin-right: 75px;
+
+        }
+
+        @include tablet {
+
+            margin-right: 30px;   
+
+        }
+
+        @include small-tablet {
+
+            margin-right: 0px;   
+
+        }
+
+    }
+
+    &__img {
+
+        position: absolute;
+        top: 14px;
+        left: 808px;
+        z-index: 1;
+
+        pointer-events: none;
+
+        @include laptop {
+
+            left: 720px;
+            
+            width: 540px;
+
+        }
+
+        @include tablet {
+
+            top: 0;
+            left: 551px;
+
+            width: 356px;
+                
+        }
+
+        @include small-tablet {
+
+            top: 89px;
+            left: 426px;
+
+            width: 250px;
+                
+        }
+
+        @include phone {
+
+            top: -290px;
+            left: 50%;
+
+            width: 270px;
+
+            transform: translateX(calc(-50% + 105px));
+
+        }
+
+    }
+
+    &__cloud {
+
+        &1 {
+
+            position: absolute;
+            bottom: -560px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+
+            @include tablet {
+
+                bottom: -360px;
+
+                width: 1400px;
+                
+            }
+
+            @include small-tablet {
+
+                bottom: -255px;
+
+                width: 1000px;
+                
+            }
+
+            @include phone {
+
+                display: none;
+
+            }
+
+            &_m {
+
+                display: none;
+
+                @include phone {
+
+                    display: block;
+                    
+                    position: absolute;
+                    bottom: -34px;
+                    left: 50%;
+                    z-index: 5;
+
+                    transform: translateX(-50%);
+
+                    pointer-events: none;
+
+                }
+
+            }
+
+        }
+
+        &2 {
+
+            position: absolute;
+            top: -800px;
+            left: 50%;
+            z-index: 5;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+
+            @include tablet {
+
+                top: -535px;
+                
+                width: 1400px;
+
+            }
+
+            @include small-tablet {
+
+                top: -366px;
+                
+                width: 1000px;
+
+            }
+
+            @include phone {
+
+                display: none;
+
+            }
+
+            &_m {
+
+                display: none;
+
+                @include phone {
+
+                    display: block;
+                    
+                    position: absolute;
+                    top: -34px;
+                    left: 50%;
+                    z-index: 5;
+
+                    transform: translateX(-50%);
+
+                    pointer-events: none;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

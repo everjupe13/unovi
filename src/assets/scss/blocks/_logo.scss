@@ -1,0 +1,31 @@
+.logo {
+
+    position: relative;
+
+    max-width: 140px;
+    max-height: max-content;
+
+    &_large {
+
+        max-width: 284px;
+
+    }
+
+    &__img {
+
+        width: 100%;
+        height: auto;
+
+    }
+
+    &__link {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+    }
+
+}
